@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="memo.css">
+    <link rel="stylesheet" href="main.css">
+    <title>memo</title>
 </head>
 <body>
     <div class="square">
@@ -12,7 +13,13 @@
             <option>Sort by recently created</option>
             <option>Sort alphabetically</option>
         </select>
-        <input id = "b" type="button" value="Create Note">
+        <a class =square2></a>
+        <input type="button" id = "b" value="Create Note" onclick = "create();">
+      <script>
+          function create(){
+             location.href='createMemo.html';
+          }
+      </script>
     </div>
 </body>
 </html>
