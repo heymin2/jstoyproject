@@ -8,17 +8,21 @@
         <h1>Notes App</h1>
         <h3>Take notes and never forget.</h3>
         <input id = "t" type="text" placeholder="Search">
-        <select>
+        <select id = "se">
             <option>Sort by last edited</option>
             <option>Sort by recently created</option>
             <option>Sort alphabetically</option>
         </select>
-        <a class =square2></a>
+        <a id = "sq1" class =square2></a>
         <input type="button" id = "b" value="Create Note" onclick = "create();">
       <script>
           function create(){
              location.href='createMemo.html';
           }
+          const sq = document.getElementById("sq1").onclick = function(event){
+              alert("메모가 비었습니다");
+          }
+         
       </script>
     </div>
 </body>
