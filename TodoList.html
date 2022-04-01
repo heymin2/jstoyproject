@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="TodoList.css">
+    <title>To-do List</title>
+</head>
+<body>
+    <div class="square">
+        <h1>To-do List App</h1>
+        <h3>Take your work and never forget.</h3>
+            <input id = "t" type="text" placeholder="새로운 할 일">
+            <button id = "b">추가</button>
+        <a id ="square2"></a>
+    </div>
+    <script>
+        const inputBox = document.getElementById("t");
+        const addBtn = document.getElementById("b");
+        const toDoList = document.getElementById("square2");
+        
+        addBtn.addEventListener("click", function() {
+            let list = document.createElement('ul');
+            list.setAttribute("class", "list");
+            append();
+           
+            function append(){
+                list.innerHTML = `<input type="checkbox" class="listCheck">${inputBox.value}`;
+                toDoList.appendChild(list);
+                inputBox.value = "";
+            }
+
+            listCheck = document.querySelectorAll('.listCheck');
+
+            list.addEventListener("dblclick", function() {
+                toDoList.removeChild(list);
+            })
+            
+            listCheck.addEventListener("click", function() {
+                if( listCheck.checked){
+                    list.style.textDecoration = "line-through";
+                    list.style.color = "grey";
+                }
+                else{
+                    list.style.color = "black";
+                    list.style.textDecoration = "none";
+                }
+            })
+        })
+    </script>
+</body>
+</html>
